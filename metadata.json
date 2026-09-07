@@ -1,0 +1,6 @@
+{
+  "name": "Romantic Birthday Wish",
+  "description": "A heartfelt, romantic birthday wish website with interactive memories, love notes, a digital envelope, and celebratory effects.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
