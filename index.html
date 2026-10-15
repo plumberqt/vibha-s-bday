@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday Vibha ❤️ | Our 1st Birthday Together</title>
-  <meta name="description" content="A romantic birthday celebration created with love by Karan for Vibha, celebrating their first birthday together in their relationship." />
-  <meta property="og:title" content="Happy Birthday Vibha ❤️ | Our 1st Birthday Together" />
-  <meta property="og:description" content="A romantic birthday celebration created with love by Karan for Vibha, celebrating their first birthday together in their relationship." />
+  <title>Happy Birthday Sajal QT ✨ | From Plumber Daddy 🔧</title>
+  <meta name="description" content="A warm, playful and sweet birthday celebration for Sajal QT from Plumber Daddy. Celebrating friendship from Graysheep WhatsApp community, cute flirting, non-stop teasing, and always being a call away." />
+  <meta property="og:title" content="Happy Birthday Sajal QT ✨ | From Plumber Daddy 🔧" />
+  <meta property="og:description" content="A warm, playful and sweet birthday celebration for Sajal QT from Plumber Daddy. Celebrating friendship from Graysheep WhatsApp community, cute flirting, non-stop teasing, and always being a call away." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- YouTube IFrame Player API for Background Song (MdO4JrihZ2w) -->
+  <script src="https://www.youtube.com/iframe_api"></script>
 
   <!-- Google Fonts: Playfair Display, Great Vibes & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -200,14 +203,14 @@
       <!-- Decorative badge -->
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-900/60 border border-rose-600/40 text-rose-300 text-xs font-semibold mb-4">
         <span id="lock-icon" class="text-base">🔒</span>
-        <span>Private Birthday Surprise</span>
+        <span>From Plumber Daddy 🔧 • For Sajal QT ✨</span>
       </div>
       
       <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">
-        Welcome, Vibha ❤️
+        Welcome, Sajal QT ✨
       </h2>
       <p class="text-xs sm:text-sm text-rose-200/80 mb-5 leading-relaxed font-light">
-        A special gift made just for you by Karan. Enter the secret 4-digit PIN passcode to unlock.
+        A special birthday surprise created by Plumber Daddy! Enter the secret 4-digit PIN passcode to unlock.
       </p>
 
       <!-- PIN Digit Indicators -->
@@ -241,8 +244,7 @@
 
       <!-- Unlock Action Button -->
       <button id="unlock-btn" onclick="checkPinAndUnlock()" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-rose-600 via-rose-500 to-amber-500 hover:from-rose-500 hover:to-amber-400 text-white font-bold text-sm sm:text-base shadow-lg shadow-rose-600/30 active:scale-98 transition-all flex items-center justify-center gap-2">
-        <span>Unlock Celebration</span>
-        <span>✨</span>
+        <span>Unlock Sajal's Celebration • Plumber Daddy ✨</span>
       </button>
     </div>
   </div>
@@ -255,8 +257,31 @@
     <div class="absolute -bottom-32 right-10 w-96 h-96 bg-rose-500/15 rounded-full blur-3xl"></div>
   </div>
 
+  <!-- Hidden YouTube Player Container for Background Music (Video ID: MdO4JrihZ2w) -->
+  <div id="yt-player-container" class="fixed -bottom-96 -left-96 pointer-events-none opacity-0 z-0 overflow-hidden w-1 h-1">
+    <div id="yt-player"></div>
+  </div>
+
   <!-- Interactive Floating Particles Canvas -->
   <canvas id="particle-canvas" class="fixed inset-0 pointer-events-none z-10 w-full h-full"></canvas>
+
+  <!-- Floating YouTube Music Control Dock -->
+  <aside id="music-floating-dock" aria-label="Music player controls" class="fixed bottom-4 right-4 z-40 flex items-center gap-2.5 p-2 px-3 sm:px-4 rounded-full bg-[#14020e]/95 border border-rose-700/60 backdrop-blur-md shadow-2xl text-xs text-rose-200 transition-all duration-300">
+    <button id="floating-music-btn" onclick="toggleBackgroundMusic()" class="w-8 h-8 rounded-full bg-gradient-to-tr from-rose-600 to-amber-500 flex items-center justify-center text-white shadow-md hover:scale-110 active:scale-95 transition-transform" title="Play / Pause Song">
+      <span id="floating-music-icon">🎵</span>
+    </button>
+    <div class="flex flex-col text-left pr-1">
+      <div class="flex items-center gap-1.5 font-medium text-amber-300 text-[11px] sm:text-xs">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" id="music-pulse-indicator"></span>
+        <span id="music-status-label">Birthday Song</span>
+      </div>
+      <span class="text-[10px] text-rose-300/70 truncate max-w-[130px] sm:max-w-[190px]" id="music-source-label">YouTube: MdO4JrihZ2w</span>
+    </div>
+    <!-- Volume Slider / Mute -->
+    <button id="floating-mute-btn" onclick="toggleMuteBackgroundMusic()" class="p-1 text-rose-300 hover:text-white transition-colors" title="Mute / Unmute">
+      <span id="mute-icon">🔊</span>
+    </button>
+  </aside>
 
   <!-- Sticky Romantic Navigation Bar -->
   <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-md bg-[#0e0309]/75 border-b border-rose-900/30">
@@ -266,20 +291,20 @@
       <a href="#hero" id="nav-brand" class="flex items-center gap-2 group cursor-pointer focus:outline-none">
         <span class="w-9 h-9 rounded-full bg-gradient-to-tr from-rose-600 to-amber-400 p-0.5 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
           <span class="w-full h-full bg-[#11020a] rounded-full flex items-center justify-center text-rose-300 text-sm">
-            🌹
+            🐑
           </span>
         </span>
         <div class="flex flex-col">
-          <span class="font-cursive text-xl sm:text-2xl text-rose-200 group-hover:text-rose-300 transition-colors leading-none">Karan & Vibha</span>
-          <span class="text-[10px] tracking-widest uppercase text-rose-400 font-semibold opacity-70">1st Birthday In Relationship</span>
+          <span class="font-cursive text-xl sm:text-2xl text-rose-200 group-hover:text-rose-300 transition-colors leading-none">Sajal QT ✨</span>
+          <span class="text-[10px] tracking-widest uppercase text-rose-400 font-semibold opacity-70">From Plumber Daddy 🔧 • Graysheep</span>
         </div>
       </a>
 
       <!-- Navigation Links (Desktop) -->
       <nav id="desktop-nav" class="hidden md:flex items-center gap-8 text-sm font-medium text-rose-200/80">
         <a href="#journey" class="hover:text-rose-300 transition-colors hover:scale-105 duration-200">Our Journey</a>
-        <a href="#reasons" class="hover:text-rose-300 transition-colors hover:scale-105 duration-200">Reasons I Love You</a>
-        <a href="#letter" class="hover:text-rose-300 transition-colors hover:scale-105 duration-200">Love Letter</a>
+        <a href="#reasons" class="hover:text-rose-300 transition-colors hover:scale-105 duration-200">Why You're Special</a>
+        <a href="#letter" class="hover:text-rose-300 transition-colors hover:scale-105 duration-200">Secret Letter</a>
         <a href="#celebration" class="hover:text-amber-300 transition-colors hover:scale-105 duration-200 flex items-center gap-1.5">
           <span>Make a Wish</span>
           <span class="text-xs">🎂</span>
@@ -289,10 +314,10 @@
       <!-- Control Center: Music Toggle & Dark/Light Toggle -->
       <div class="flex items-center gap-2 sm:gap-3">
         
-        <!-- Music Toggle Button -->
-        <button id="audio-toggle-btn" class="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-rose-950/60 border border-rose-800/40 text-rose-200 hover:bg-rose-900/60 hover:border-rose-600/60 transition-all shadow-sm group" title="Toggle Romantic Melody">
+        <!-- Music Toggle Button (YouTube Background Song) -->
+        <button id="audio-toggle-btn" onclick="toggleBackgroundMusic()" class="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-rose-950/60 border border-rose-800/40 text-rose-200 hover:bg-rose-900/60 hover:border-rose-600/60 transition-all shadow-sm group" title="Toggle Background Song (YouTube: MdO4JrihZ2w)">
           <span class="text-rose-400 group-hover:scale-110 transition-transform">🎵</span>
-          <span id="audio-status-text" class="hidden sm:inline">Play Melody</span>
+          <span id="audio-status-text" class="hidden sm:inline">Play Song</span>
           <!-- Animated audio bars -->
           <div id="audio-bars" class="hidden flex items-end gap-0.5 h-3 ml-0.5">
             <span class="w-0.5 bg-rose-400 sound-bar-1 rounded-full"></span>
@@ -325,8 +350,8 @@
       <!-- Romantic Decorative Laurel Badge -->
       <div id="hero-badge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-950/70 border border-rose-700/40 text-rose-300 text-xs sm:text-sm mb-6 backdrop-blur-md glow-rose opacity-0">
         <span class="text-amber-300">✨</span>
-        <span class="font-medium tracking-wide">For My Dearest Vibha • With Love From Karan</span>
-        <span class="text-rose-400">🌹</span>
+        <span class="font-medium tracking-wide">From Plumber Daddy 🔧 • For The Cutest Person • Happy Birthday Sajal QT 🐑</span>
+        <span class="text-rose-400">💖</span>
       </div>
 
       <!-- Main Headline -->
@@ -334,29 +359,29 @@
         <h1 id="hero-title" class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-3 text-glow opacity-0 leading-[1.1]">
           Happy Birthday, <br class="hidden sm:inline"/>
           <span class="font-cursive text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-rose-300 via-rose-400 to-amber-200 block sm:inline mt-2 sm:mt-0">
-            Vibha ✨
+            Sajal QT ✨
           </span>
         </h1>
       </div>
 
       <!-- Heartfelt Subtitle -->
       <p id="hero-subtitle" class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-rose-200/90 font-light leading-relaxed mb-8 opacity-0">
-        Our very first birthday together in our relationship. A small corner of the internet built with all my heart, dedicated to the sweetest person in my life.
+        We met just a month ago in the Graysheep WhatsApp community, and you've already become such an awesome, cute, and sweet friend! From your cute flirting to Plumber Daddy teasing you endlessly, here's celebrating you.
       </p>
 
       <!-- Key Met Counters / Love Ribbon -->
       <div id="hero-chips" class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 mb-10 opacity-0">
         <div class="px-4 py-2 rounded-2xl bg-rose-900/30 border border-rose-700/30 backdrop-blur-md flex items-center gap-2 text-xs sm:text-sm text-rose-200">
-          <span class="text-base">🎂</span>
-          <span>1st Birthday In Our Relationship</span>
-        </div>
-        <div class="px-4 py-2 rounded-2xl bg-rose-900/30 border border-rose-700/30 backdrop-blur-md flex items-center gap-2 text-xs sm:text-sm text-rose-200">
-          <span class="text-base">💬</span>
-          <span>From Insta GC To Us</span>
+          <span class="text-base">🐑</span>
+          <span>Graysheep WA Community</span>
         </div>
         <div class="px-4 py-2 rounded-2xl bg-rose-900/30 border border-rose-700/30 backdrop-blur-md flex items-center gap-2 text-xs sm:text-sm text-amber-200">
-          <span class="text-base">🌱</span>
-          <span>Growing & Building Together</span>
+          <span class="text-base">🔧</span>
+          <span>Plumber Daddy & Sajal QT</span>
+        </div>
+        <div class="px-4 py-2 rounded-2xl bg-rose-900/30 border border-rose-700/30 backdrop-blur-md flex items-center gap-2 text-xs sm:text-sm text-rose-200">
+          <span class="text-base">📞</span>
+          <span>Always Just A Call Away</span>
         </div>
       </div>
 
@@ -367,14 +392,14 @@
           <span>↓</span>
         </a>
         <a href="#letter" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-rose-950/60 hover:bg-rose-900/60 border border-rose-700/40 hover:border-rose-500/60 text-rose-200 font-medium text-sm sm:text-base backdrop-blur-md transition-all flex items-center justify-center gap-2">
-          <span>Read My Secret Letter</span>
+          <span>Read Secret Letter</span>
           <span>💌</span>
         </a>
       </div>
 
       <!-- Subtle Scroll Indicator -->
       <div id="hero-scroll-indicator" class="flex flex-col items-center gap-2 text-rose-400/80 text-xs tracking-wider uppercase font-medium animate-bounce opacity-0">
-        <span>Scroll down to unwrap our memories</span>
+        <span>Scroll down to explore memories</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
@@ -396,7 +421,7 @@
           Moments Frozen In Time
         </h2>
         <p class="text-rose-200/80 text-sm sm:text-base max-w-xl mx-auto">
-          From the first spark to this very moment, every chapter with you has been my favorite adventure.
+          From meeting in Graysheep to non-stop teasing and laughs, every chapter with you is golden.
         </p>
       </div>
 
@@ -409,157 +434,157 @@
         <!-- Timeline Items Container -->
         <div class="space-y-16 sm:space-y-24">
 
-          <!-- Milestone 1: From Insta GC -->
+          <!-- Milestone 1: Met in Graysheep GC -->
           <div class="timeline-item relative flex flex-col md:flex-row items-center gap-8 md:gap-0" data-align="left">
             <div class="w-full md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
               <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 border border-rose-700/50 text-amber-300 text-xs font-semibold mb-2">
                 Chapter 01 • The Beginning
               </span>
-              <h3 class="font-serif text-2xl font-bold text-white mb-2">From An Insta GC To Us</h3>
+              <h3 class="font-serif text-2xl font-bold text-white mb-2">Met in Graysheep GC 🐑</h3>
               <p class="text-rose-200/80 text-sm sm:text-base leading-relaxed mb-4">
-                Hum ek random Instagram group chat se shuru hoke yahan tak aa gaye. Jo baatein aam si lagti thi, woh dheere dheere kab itni pyaari aur special ban gayi pata hi nahi chala.
+                Hum bas ek mahine pehle ek WhatsApp community mein mile the jiska naam tha Graysheep. Random chats se shuru hua safar aur kab Plumber Daddy aur Sajal QT itne close friends ban gaye pata hi nahi chala!
               </p>
-              <div class="text-xs text-rose-400 italic">"Look how far we've come from that one Insta GC."</div>
+              <div class="text-xs text-rose-400 italic">"Just a month ago in Graysheep, but feels like an unforgettable bond."</div>
             </div>
 
             <!-- Central Node Marker -->
             <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gradient-to-tr from-rose-600 to-amber-400 p-0.5 shadow-lg shadow-rose-500/50 z-20 flex items-center justify-center">
               <div class="w-full h-full bg-[#11020a] rounded-full flex items-center justify-center text-xs">
-                ✨
+                🐑
               </div>
             </div>
 
             <!-- Polaroid Photo Frame (Cute Cat 1) -->
             <div class="w-full md:w-1/2 md:pl-12 pl-12 md:pl-0 flex justify-start md:justify-start">
-              <div class="polaroid-card bg-white p-3 sm:p-4 rounded-sm shadow-xl max-w-xs -rotate-2 hover:rotate-0 transition-transform cursor-pointer group" onclick="openPhotoModal('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80', 'From an Insta GC to us')">
+              <div class="polaroid-card bg-white p-3 sm:p-4 rounded-sm shadow-xl max-w-xs -rotate-2 hover:rotate-0 transition-transform cursor-pointer group" onclick="openPhotoModal('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80', 'Met in Graysheep WhatsApp Community')">
                 <div class="overflow-hidden bg-rose-100 aspect-[4/5] rounded-xs relative">
                   <div class="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 washi-tape -rotate-2 z-10"></div>
                   <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80" alt="Curious Cute Cat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <div class="pt-3 text-center">
-                  <p class="font-cursive text-xl text-neutral-800">From Insta GC to Us 🐾</p>
+                  <p class="font-cursive text-xl text-neutral-800">Graysheep Community 🐾</p>
                   <span class="text-[10px] text-neutral-500 uppercase tracking-wider">Where our story began</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Milestone 2: First Meetup (Shy Karan hehe) -->
+          <!-- Milestone 2: Flirting & Being So Cute -->
           <div class="timeline-item relative flex flex-col md:flex-row-reverse items-center gap-8 md:gap-0" data-align="right">
             <div class="w-full md:w-1/2 md:pl-12 text-left pl-12 md:pl-0">
               <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 border border-rose-700/50 text-amber-300 text-xs font-semibold mb-2">
-                Chapter 02 • Our First Meetup
+                Chapter 02 • Cute & Flirty
               </span>
-              <h3 class="font-serif text-2xl font-bold text-white mb-2">When I Got So Shy (Hehe)</h3>
+              <h3 class="font-serif text-2xl font-bold text-white mb-2">Mr. Cute & Flirty (Hehe) 😉</h3>
               <p class="text-rose-200/80 text-sm sm:text-base leading-relaxed mb-4">
-                Jab hum pehli baar mile the, main honestly itna shy ho gaya tha pehli baar mein hehe! You looked so pretty, and while I was super nervous at first, your presence made me feel so happy and comfortable.
+                You are honestly so so cute! Aur jo tum hamesha Plumber Daddy ke saath flirt karte rehte ho na hehe, it always brings a huge smile to my face. Tumhara cute flirty andaaz is simply impossible to ignore!
               </p>
-              <div class="text-xs text-rose-400 italic">"Pehli baar milte hi dil mein butterflies aa gayi thi hehe."</div>
+              <div class="text-xs text-rose-400 italic">"Hamesha flirt karta hai, kitna cute hai yaar hehe."</div>
             </div>
 
             <!-- Central Node Marker -->
             <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gradient-to-tr from-rose-600 to-amber-400 p-0.5 shadow-lg shadow-rose-500/50 z-20 flex items-center justify-center">
               <div class="w-full h-full bg-[#11020a] rounded-full flex items-center justify-center text-xs">
-                🌹
+                💖
               </div>
             </div>
 
-            <!-- Polaroid Photo Frame (Cute Cat 2 - Shy Kitten) -->
+            <!-- Polaroid Photo Frame (Cute Cat 2 - Cute Flirty Cat) -->
             <div class="w-full md:w-1/2 md:pr-12 pl-12 md:pl-0 flex justify-start md:justify-end">
-              <div class="polaroid-card bg-white p-3 sm:p-4 rounded-sm shadow-xl max-w-xs rotate-2 hover:rotate-0 transition-transform cursor-pointer group" onclick="openPhotoModal('https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=800&q=80', 'When Karan was so shy hehe')">
+              <div class="polaroid-card bg-white p-3 sm:p-4 rounded-sm shadow-xl max-w-xs rotate-2 hover:rotate-0 transition-transform cursor-pointer group" onclick="openPhotoModal('https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=800&q=80', 'Mr. Cute & Flirty Sajal')">
                 <div class="overflow-hidden bg-rose-100 aspect-[4/5] rounded-xs relative">
                   <div class="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 washi-tape rotate-1 z-10"></div>
-                  <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80" alt="Shy Cute Cat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80" alt="Cute Blushing Cat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <div class="pt-3 text-center">
-                  <p class="font-cursive text-xl text-neutral-800">So shy pehli baar mein 🐱</p>
-                  <span class="text-[10px] text-neutral-500 uppercase tracking-wider">Butterflies & sweet smiles</span>
+                  <p class="font-cursive text-xl text-neutral-800">Mr. Flirty & Cute 🐱</p>
+                  <span class="text-[10px] text-neutral-500 uppercase tracking-wider">Flirting 24/7 hehe</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Milestone 3: Supporting Me In Every Way -->
+          <!-- Milestone 3: Teasing You 24/7 -->
           <div class="timeline-item relative flex flex-col md:flex-row items-center gap-8 md:gap-0" data-align="left">
             <div class="w-full md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
               <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 border border-rose-700/50 text-amber-300 text-xs font-semibold mb-2">
-                Chapter 03 • Endless Support
+                Chapter 03 • Endless Teasing
               </span>
-              <h3 class="font-serif text-2xl font-bold text-white mb-2">You Always Support Me</h3>
+              <h3 class="font-serif text-2xl font-bold text-white mb-2">Teasing You Is My Favorite 😜</h3>
               <p class="text-rose-200/80 text-sm sm:text-base leading-relaxed mb-4">
-                I know main aksar padhai, career ki baatein aur savings ke baare mein bolta rehta hoon, but you always support me in every way. Having your constant belief behind my goals gives me so much peace and strength.
+                Honestly, Plumber Daddy ko tumhe tease karna aur tang karna itna zyada accha lagta hai! Tumhe roast karke jo cute expressions aur innocent reactions aate hain na, that is seriously my favorite pastime ever hehe.
               </p>
-              <div class="text-xs text-rose-400 italic">"Thank you for always understanding and supporting me."</div>
+              <div class="text-xs text-rose-400 italic">"Tumhe tease karne mein jo maza hai, woh kahin nahi!"</div>
             </div>
 
             <!-- Central Node Marker -->
             <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gradient-to-tr from-rose-600 to-amber-400 p-0.5 shadow-lg shadow-rose-500/50 z-20 flex items-center justify-center">
               <div class="w-full h-full bg-[#11020a] rounded-full flex items-center justify-center text-xs">
-                🤍
+                😜
               </div>
             </div>
 
-            <!-- Polaroid Photo Frame (Cute Cat 3 - Cozy Supportive Cat) -->
+            <!-- Polaroid Photo Frame (Cute Cat 3 - Mischievous Cat) -->
             <div class="w-full md:w-1/2 md:pl-12 pl-12 md:pl-0 flex justify-start md:justify-start">
-              <div class="polaroid-card bg-white p-3 sm:p-4 rounded-sm shadow-xl max-w-xs -rotate-3 hover:rotate-0 transition-transform cursor-pointer group" onclick="openPhotoModal('https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80', 'You always support me')">
+              <div class="polaroid-card bg-white p-3 sm:p-4 rounded-sm shadow-xl max-w-xs -rotate-3 hover:rotate-0 transition-transform cursor-pointer group" onclick="openPhotoModal('https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80', 'Teasing Sajal QT 24/7')">
                 <div class="overflow-hidden bg-rose-100 aspect-[4/5] rounded-xs relative">
                   <div class="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 washi-tape -rotate-2 z-10"></div>
-                  <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=600&q=80" alt="Supportive Cozy Cat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=600&q=80" alt="Mischievous Cozy Cat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <div class="pt-3 text-center">
-                  <p class="font-cursive text-xl text-neutral-800">My Biggest Support 🤍</p>
-                  <span class="text-[10px] text-neutral-500 uppercase tracking-wider">Always there by my side</span>
+                  <p class="font-cursive text-xl text-neutral-800">Teasing Sajal QT 😜</p>
+                  <span class="text-[10px] text-neutral-500 uppercase tracking-wider">Priceless cute reactions</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Milestone 4: Exploring Delhi Together -->
+          <!-- Milestone 4: Always Taking My Side in Arguments -->
           <div class="timeline-item relative flex flex-col md:flex-row-reverse items-center gap-8 md:gap-0" data-align="right">
             <div class="w-full md:w-1/2 md:pl-12 text-left pl-12 md:pl-0">
               <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 border border-rose-700/50 text-amber-300 text-xs font-semibold mb-2">
-                Chapter 04 • Adventures
+                Chapter 04 • Loyal Supporter
               </span>
-              <h3 class="font-serif text-2xl font-bold text-white mb-2">Exploring Delhi Together</h3>
+              <h3 class="font-serif text-2xl font-bold text-white mb-2">Taking Plumber Daddy's Side In Arguments 🛡️</h3>
               <p class="text-rose-200/80 text-sm sm:text-base leading-relaxed mb-4">
-                Tumne mujhe itna sab ghumaya Delhi mein! Har road, har destination, aur har little adventure feels so joyful and special because I was walking hand-in-hand with you.
+                Thank you for always taking Plumber Daddy's side in every argument and debate... jabki honestly main waise bhi hamesha right hi hota hoon hehe! But knowing that you always back me up and stand by Plumber Daddy means so much.
               </p>
-              <div class="text-xs text-rose-400 italic">"Delhi feels so warm and lively when I'm with you."</div>
+              <div class="text-xs text-rose-400 italic">"Always on Plumber Daddy's side (even though I'm always right hehe)."</div>
             </div>
 
             <!-- Central Node Marker -->
             <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gradient-to-tr from-rose-600 to-amber-400 p-0.5 shadow-lg shadow-rose-500/50 z-20 flex items-center justify-center">
               <div class="w-full h-full bg-[#11020a] rounded-full flex items-center justify-center text-xs">
-                ✈️
+                🛡️
               </div>
             </div>
 
-            <!-- Polaroid Photo Frame (Cute Cat 4 - Adventurous Cat) -->
+            <!-- Polaroid Photo Frame (Cute Cat 4 - Loyal Cat) -->
             <div class="w-full md:w-1/2 md:pr-12 pl-12 md:pl-0 flex justify-start md:justify-end">
-              <div class="polaroid-card bg-white p-3 sm:p-4 rounded-sm shadow-xl max-w-xs rotate-3 hover:rotate-0 transition-transform cursor-pointer group" onclick="openPhotoModal('https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=800&q=80', 'Exploring Delhi together')">
+              <div class="polaroid-card bg-white p-3 sm:p-4 rounded-sm shadow-xl max-w-xs rotate-3 hover:rotate-0 transition-transform cursor-pointer group" onclick="openPhotoModal('https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=800&q=80', 'Taking my side in every argument')">
                 <div class="overflow-hidden bg-rose-100 aspect-[4/5] rounded-xs relative">
                   <div class="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 washi-tape rotate-1 z-10"></div>
-                  <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80" alt="Adventurous Cat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80" alt="Loyal Cool Cat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <div class="pt-3 text-center">
-                  <p class="font-cursive text-xl text-neutral-800">Roaming Delhi with You 🏙️</p>
-                  <span class="text-[10px] text-neutral-500 uppercase tracking-wider">Unforgettable memories</span>
+                  <p class="font-cursive text-xl text-neutral-800">Always On My Side 🤍</p>
+                  <span class="text-[10px] text-neutral-500 uppercase tracking-wider">Number one defender</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Milestone 5: 1st Birthday In Our Relationship -->
+          <!-- Milestone 5: Ups & Downs - Just A Call Away -->
           <div class="timeline-item relative flex flex-col md:flex-row items-center gap-8 md:gap-0" data-align="left">
             <div class="w-full md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
               <span class="inline-block px-3 py-1 rounded-full bg-rose-600/30 border border-rose-500 text-amber-300 text-xs font-bold mb-2 shadow-sm">
-                Chapter 05 • 1st Birthday In Our Relationship
+                Chapter 05 • Through Ups & Downs
               </span>
-              <h3 class="font-serif text-2xl font-bold text-white mb-2">Our First Birthday Together</h3>
+              <h3 class="font-serif text-2xl font-bold text-white mb-2">Always Just A Call Away 📞</h3>
               <p class="text-rose-200/80 text-sm sm:text-base leading-relaxed mb-4">
-                Today is your very first birthday in our relationship! I only want ki hum hamesha acche se rahein, saath mein grow karein, aur apna career acche se banayein. I am so glad to celebrate this special day with you.
+                Maine iss ek mahine mein jitna tumhe jaana hai, that you are genuinely such a good person at heart. Life mein chahe kitne bhi ups and downs aayein, remember that Plumber Daddy is always just a call away for you, okie?
               </p>
-              <div class="text-xs text-amber-300 font-semibold italic">"Happy 1st Birthday in our relationship, my dearest Vibha! 🎂"</div>
+              <div class="text-xs text-amber-300 font-semibold italic">"Happy Birthday Sajal QT! Plumber Daddy is always just a call away ✨"</div>
             </div>
 
             <!-- Central Node Marker -->
@@ -571,14 +596,14 @@
 
             <!-- Polaroid Photo Frame (Cute Cat 5 - Birthday Kitten) -->
             <div class="w-full md:w-1/2 md:pl-12 pl-12 md:pl-0 flex justify-start md:justify-start">
-              <div class="polaroid-card bg-white p-3 sm:p-4 rounded-sm shadow-xl max-w-xs -rotate-1 hover:rotate-0 transition-transform cursor-pointer group" onclick="openPhotoModal('https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80', 'Celebrating Vibha\'s 1st Birthday in our relationship')">
+              <div class="polaroid-card bg-white p-3 sm:p-4 rounded-sm shadow-xl max-w-xs -rotate-1 hover:rotate-0 transition-transform cursor-pointer group" onclick="openPhotoModal('https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80', 'Celebrating Sajal QT\'s Birthday')">
                 <div class="overflow-hidden bg-rose-100 aspect-[4/5] rounded-xs relative">
                   <div class="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 washi-tape -rotate-2 z-10"></div>
                   <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=600&q=80" alt="Birthday Celebration Cat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <div class="pt-3 text-center">
-                  <p class="font-cursive text-xl text-neutral-800">Happy Birthday Vibha 👑</p>
-                  <span class="text-[10px] text-neutral-500 uppercase tracking-wider">Our first birthday together</span>
+                  <p class="font-cursive text-xl text-neutral-800">Happy Birthday Sajal QT 👑</p>
+                  <span class="text-[10px] text-neutral-500 uppercase tracking-wider">Always just a call away</span>
                 </div>
               </div>
             </div>
@@ -596,33 +621,33 @@
       <div class="text-center max-w-3xl mx-auto mb-16 reasons-header">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-950/60 border border-rose-800/40 text-rose-300 text-xs mb-3">
           <span>💖</span>
-          <span>From The Depths of My Soul</span>
+          <span>Sweet & Playful Notes</span>
         </div>
         <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">
-          Reasons Why I Love You
+          Why Sajal QT Is So Special
         </h2>
         <p class="text-rose-200/80 text-sm sm:text-base max-w-xl mx-auto">
-          Out of the million reasons, here are six little pieces of my heart. <br class="hidden sm:inline"/>
-          <span class="text-amber-300 font-medium">Click or tap any card</span> to flip and reveal the secret note.
+          From endless flirting to non-stop teasing, here are six little reasons why you mean so much. <br class="hidden sm:inline"/>
+          <span class="text-amber-300 font-medium">Click or tap any card</span> to flip and read the secret note!
         </p>
       </div>
 
       <!-- 6 Interactive Cards Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 perspective-1000" id="cards-container">
         
-        <!-- Card 1 -->
+        <!-- Card 1: Always Taking My Side -->
         <div class="flip-card h-72 sm:h-80 cursor-pointer group" onclick="toggleCardFlip(this)">
           <div class="flip-card-inner relative w-full h-full preserve-3d transition-transform duration-700 rounded-2xl shadow-lg shadow-rose-950/50">
             
             <!-- Front Face -->
             <div class="absolute inset-0 backface-hidden rounded-2xl p-6 flex flex-col justify-between bg-gradient-to-b from-rose-950/70 to-[#190410]/90 border border-rose-800/40 backdrop-blur-md group-hover:border-rose-500/60 transition-colors">
               <div class="flex items-center justify-between">
-                <span class="text-3xl">🤍</span>
+                <span class="text-3xl">🛡️</span>
                 <span class="text-xs font-semibold text-rose-400/80 uppercase tracking-wider">Reason #1</span>
               </div>
               <div class="my-auto text-center">
-                <h3 class="font-serif text-2xl font-bold text-white mb-2">You Always Support Me</h3>
-                <p class="text-xs text-rose-300/70">Listening to my career, studies & goals</p>
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">Plumber Daddy's Defender</h3>
+                <p class="text-xs text-rose-300/70">Always taking my side in every debate</p>
               </div>
               <div class="flex items-center justify-center gap-1.5 text-xs text-amber-300/90 font-medium">
                 <span>Tap to reveal note</span>
@@ -633,33 +658,33 @@
             <!-- Back Face -->
             <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl p-6 flex flex-col justify-between bg-gradient-to-b from-rose-900/90 to-wine-950 border border-amber-400/50 backdrop-blur-md glow-rose">
               <div class="flex items-center justify-between text-xs text-amber-300 font-serif italic">
-                <span>To Vibha</span>
-                <span>🌹</span>
+                <span>To Sajal QT</span>
+                <span>🛡️</span>
               </div>
               <p class="text-rose-100 text-sm sm:text-base leading-relaxed text-center font-light my-auto">
-                "Main aksar padhai, career aur savings ki baatein karta rehta hoon, but you always listen patiently and support me in every way. Having your support means everything to me."
+                "Thanks for taking Plumber Daddy's side always on arguments... jabki honestly main waise bhi hamesha right hi hota hoon hehe! But having you blindly in my corner is seriously the best."
               </p>
               <div class="text-[11px] text-center text-rose-300/70">
-                Always grateful for you
+                Number one loyal defender • Plumber Daddy 🔧
               </div>
             </div>
 
           </div>
         </div>
 
-        <!-- Card 2 -->
+        <!-- Card 2: Mr. Cute & Flirty -->
         <div class="flip-card h-72 sm:h-80 cursor-pointer group" onclick="toggleCardFlip(this)">
           <div class="flip-card-inner relative w-full h-full preserve-3d transition-transform duration-700 rounded-2xl shadow-lg shadow-rose-950/50">
             
             <!-- Front Face -->
             <div class="absolute inset-0 backface-hidden rounded-2xl p-6 flex flex-col justify-between bg-gradient-to-b from-rose-950/70 to-[#190410]/90 border border-rose-800/40 backdrop-blur-md group-hover:border-rose-500/60 transition-colors">
               <div class="flex items-center justify-between">
-                <span class="text-3xl">🏙️</span>
+                <span class="text-3xl">😉</span>
                 <span class="text-xs font-semibold text-rose-400/80 uppercase tracking-wider">Reason #2</span>
               </div>
               <div class="my-auto text-center">
-                <h3 class="font-serif text-2xl font-bold text-white mb-2">Showing Me Delhi</h3>
-                <p class="text-xs text-rose-300/70">Making every corner and road so memorable</p>
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">So Cute & Flirty</h3>
+                <p class="text-xs text-rose-300/70">Flirting 24/7 with Plumber Daddy</p>
               </div>
               <div class="flex items-center justify-center gap-1.5 text-xs text-amber-300/90 font-medium">
                 <span>Tap to reveal note</span>
@@ -670,33 +695,33 @@
             <!-- Back Face -->
             <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl p-6 flex flex-col justify-between bg-gradient-to-b from-rose-900/90 to-wine-950 border border-amber-400/50 backdrop-blur-md glow-rose">
               <div class="flex items-center justify-between text-xs text-amber-300 font-serif italic">
-                <span>Our Delhi Memories</span>
-                <span>🌹</span>
+                <span>Cute Banter</span>
+                <span>💖</span>
               </div>
               <p class="text-rose-100 text-sm sm:text-base leading-relaxed text-center font-light my-auto">
-                "Tumne mujhe Delhi mein itna sab ghumaya, har jagah explore karwayi. Har destination aur har date itni special ban gayi just because I was with you."
+                "You are honestly so cute! Aur jo tum Plumber Daddy ke saath flirt karte rehte ho na hehe, it is so adorable. Tumhara cute flirty andaaz always puts a huge smile on my face."
               </p>
               <div class="text-[11px] text-center text-rose-300/70">
-                Best companion ever
+                Forever cute & charming
               </div>
             </div>
 
           </div>
         </div>
 
-        <!-- Card 3 -->
+        <!-- Card 3: Teasing You 24/7 -->
         <div class="flip-card h-72 sm:h-80 cursor-pointer group" onclick="toggleCardFlip(this)">
           <div class="flip-card-inner relative w-full h-full preserve-3d transition-transform duration-700 rounded-2xl shadow-lg shadow-rose-950/50">
             
             <!-- Front Face -->
             <div class="absolute inset-0 backface-hidden rounded-2xl p-6 flex flex-col justify-between bg-gradient-to-b from-rose-950/70 to-[#190410]/90 border border-rose-800/40 backdrop-blur-md group-hover:border-rose-500/60 transition-colors">
               <div class="flex items-center justify-between">
-                <span class="text-3xl">🐱</span>
+                <span class="text-3xl">😜</span>
                 <span class="text-xs font-semibold text-rose-400/80 uppercase tracking-wider">Reason #3</span>
               </div>
               <div class="my-auto text-center">
-                <h3 class="font-serif text-2xl font-bold text-white mb-2">Our First Meetup</h3>
-                <p class="text-xs text-rose-300/70">When I got so shy pehli baar mein hehe</p>
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">Teasing You Non-Stop</h3>
+                <p class="text-xs text-rose-300/70">Plumber Daddy's favorite hobby</p>
               </div>
               <div class="flex items-center justify-center gap-1.5 text-xs text-amber-300/90 font-medium">
                 <span>Tap to reveal note</span>
@@ -707,33 +732,33 @@
             <!-- Back Face -->
             <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl p-6 flex flex-col justify-between bg-gradient-to-b from-rose-900/90 to-wine-950 border border-amber-400/50 backdrop-blur-md glow-rose">
               <div class="flex items-center justify-between text-xs text-amber-300 font-serif italic">
-                <span>First Meetup Memory</span>
-                <span>🌹</span>
+                <span>My Favorite Hobby</span>
+                <span>😜</span>
               </div>
               <p class="text-rose-100 text-sm sm:text-base leading-relaxed text-center font-light my-auto">
-                "Pehli baar jab hum mile the toh main honestly itna shy ho gaya tha hehe! But your sweet presence made all my nervousness vanish and brought the happiest smile."
+                "Plumber Daddy ko tumhe tease karna aur tang karna itna accha lagta hai! Tumhare cute reactions dekh kar mujhe jo kick milti hai na, that’s unmatched haha."
               </p>
               <div class="text-[11px] text-center text-rose-300/70">
-                Butterflies from day one
+                Can never stop teasing you
               </div>
             </div>
 
           </div>
         </div>
 
-        <!-- Card 4 -->
+        <!-- Card 4: Graysheep WhatsApp Community -->
         <div class="flip-card h-72 sm:h-80 cursor-pointer group" onclick="toggleCardFlip(this)">
           <div class="flip-card-inner relative w-full h-full preserve-3d transition-transform duration-700 rounded-2xl shadow-lg shadow-rose-950/50">
             
             <!-- Front Face -->
             <div class="absolute inset-0 backface-hidden rounded-2xl p-6 flex flex-col justify-between bg-gradient-to-b from-rose-950/70 to-[#190410]/90 border border-rose-800/40 backdrop-blur-md group-hover:border-rose-500/60 transition-colors">
               <div class="flex items-center justify-between">
-                <span class="text-3xl">💬</span>
+                <span class="text-3xl">🐑</span>
                 <span class="text-xs font-semibold text-rose-400/80 uppercase tracking-wider">Reason #4</span>
               </div>
               <div class="my-auto text-center">
-                <h3 class="font-serif text-2xl font-bold text-white mb-2">From Insta GC To Us</h3>
-                <p class="text-xs text-rose-300/70">How far we have come together</p>
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">Graysheep Community</h3>
+                <p class="text-xs text-rose-300/70">Just a month ago in that WhatsApp GC</p>
               </div>
               <div class="flex items-center justify-center gap-1.5 text-xs text-amber-300/90 font-medium">
                 <span>Tap to reveal note</span>
@@ -744,33 +769,33 @@
             <!-- Back Face -->
             <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl p-6 flex flex-col justify-between bg-gradient-to-b from-rose-900/90 to-wine-950 border border-amber-400/50 backdrop-blur-md glow-rose">
               <div class="flex items-center justify-between text-xs text-amber-300 font-serif italic">
-                <span>The Origin</span>
-                <span>🌹</span>
+                <span>Graysheep Origins</span>
+                <span>✨</span>
               </div>
               <p class="text-rose-100 text-sm sm:text-base leading-relaxed text-center font-light my-auto">
-                "Ek random Instagram group chat se shuru hoke hum yahan tak aa gaye. It’s so surreal and sweet to think how that one chat connected our lives."
+                "Hum log ek WhatsApp community me mile the just a month ago jiska naam tha Graysheep. Ek mahine mein itna pyaara aur mazedaar connection ban gaya!"
               </p>
               <div class="text-[11px] text-center text-rose-300/70">
-                Destined from the start
+                Best community discovery ever
               </div>
             </div>
 
           </div>
         </div>
 
-        <!-- Card 5 -->
+        <!-- Card 5: Genuinely A Good Person -->
         <div class="flip-card h-72 sm:h-80 cursor-pointer group" onclick="toggleCardFlip(this)">
           <div class="flip-card-inner relative w-full h-full preserve-3d transition-transform duration-700 rounded-2xl shadow-lg shadow-rose-950/50">
             
             <!-- Front Face -->
             <div class="absolute inset-0 backface-hidden rounded-2xl p-6 flex flex-col justify-between bg-gradient-to-b from-rose-950/70 to-[#190410]/90 border border-rose-800/40 backdrop-blur-md group-hover:border-rose-500/60 transition-colors">
               <div class="flex items-center justify-between">
-                <span class="text-3xl">🌱</span>
+                <span class="text-3xl">✨</span>
                 <span class="text-xs font-semibold text-rose-400/80 uppercase tracking-wider">Reason #5</span>
               </div>
               <div class="my-auto text-center">
-                <h3 class="font-serif text-2xl font-bold text-white mb-2">Growing Together</h3>
-                <p class="text-xs text-rose-300/70">Building our careers & future</p>
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">Truly A Good Person</h3>
+                <p class="text-xs text-rose-300/70">Pure heart & genuine nature</p>
               </div>
               <div class="flex items-center justify-center gap-1.5 text-xs text-amber-300/90 font-medium">
                 <span>Tap to reveal note</span>
@@ -781,33 +806,33 @@
             <!-- Back Face -->
             <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl p-6 flex flex-col justify-between bg-gradient-to-b from-rose-900/90 to-wine-950 border border-amber-400/50 backdrop-blur-md glow-rose">
               <div class="flex items-center justify-between text-xs text-amber-300 font-serif italic">
-                <span>Our Future</span>
-                <span>🌹</span>
+                <span>Pure Soul</span>
+                <span>🤍</span>
               </div>
               <p class="text-rose-100 text-sm sm:text-base leading-relaxed text-center font-light my-auto">
-                "I only want ki hum hamesha acche se rahein, saath mein grow karein, aur apna career acche se banayein. Walking this path together is my only goal."
+                "Maine jitna tumhe abhi tak jaana hai, that you are genuinely such a very good and sweet person. Your kindness and warmth make you so rare."
               </p>
               <div class="text-[11px] text-center text-rose-300/70">
-                Together in every step
+                Golden heart at core
               </div>
             </div>
 
           </div>
         </div>
 
-        <!-- Card 6 -->
+        <!-- Card 6: Always Just A Call Away -->
         <div class="flip-card h-72 sm:h-80 cursor-pointer group" onclick="toggleCardFlip(this)">
           <div class="flip-card-inner relative w-full h-full preserve-3d transition-transform duration-700 rounded-2xl shadow-lg shadow-rose-950/50">
             
             <!-- Front Face -->
             <div class="absolute inset-0 backface-hidden rounded-2xl p-6 flex flex-col justify-between bg-gradient-to-b from-rose-950/70 to-[#190410]/90 border border-rose-800/40 backdrop-blur-md group-hover:border-rose-500/60 transition-colors">
               <div class="flex items-center justify-between">
-                <span class="text-3xl">💖</span>
+                <span class="text-3xl">📞</span>
                 <span class="text-xs font-semibold text-rose-400/80 uppercase tracking-wider">Reason #6</span>
               </div>
               <div class="my-auto text-center">
-                <h3 class="font-serif text-2xl font-bold text-white mb-2">Simply Being My Vibha</h3>
-                <p class="text-xs text-rose-300/70">The most understanding person</p>
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">Plumber Daddy Is A Call Away</h3>
+                <p class="text-xs text-rose-300/70">Through all of life's ups and downs</p>
               </div>
               <div class="flex items-center justify-center gap-1.5 text-xs text-amber-300/90 font-medium">
                 <span>Tap to reveal note</span>
@@ -818,14 +843,14 @@
             <!-- Back Face -->
             <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl p-6 flex flex-col justify-between bg-gradient-to-b from-rose-900/90 to-wine-950 border border-amber-400/50 backdrop-blur-md glow-rose">
               <div class="flex items-center justify-between text-xs text-amber-300 font-serif italic">
-                <span>With All My Love</span>
-                <span>🌹</span>
+                <span>Always Here</span>
+                <span>✨</span>
               </div>
               <p class="text-rose-100 text-sm sm:text-base leading-relaxed text-center font-light my-auto">
-                "I know main hamesha pura time nahi de pata, but thank you for being so patient and understanding. I am so glad to have you in my life, and I love you so much!"
+                "Life mein kabhi bhi koi bhi ups and downs aayenge, toh uske liye Plumber Daddy is always just a call away, okie? You never have to worry or hesitate."
               </p>
               <div class="text-[11px] text-center text-rose-300/70">
-                Yours always, Karan
+                Just a call away, always
               </div>
             </div>
 
@@ -867,24 +892,24 @@
             <!-- Vintage Postmark & Ribbon -->
             <div class="flex items-center justify-between w-full max-w-lg mb-6 pb-3 border-b border-rose-800/40 text-xs text-rose-300/80">
               <div class="flex items-center gap-2">
-                <span class="text-rose-400">🌹</span>
+                <span class="text-rose-400">🐑</span>
                 <span class="font-serif tracking-widest uppercase text-[11px]">Special Birthday Delivery</span>
               </div>
               <div class="px-2.5 py-1 rounded bg-rose-950/80 border border-amber-400/40 text-amber-300 font-mono text-[10px] tracking-wider uppercase shadow-inner">
-                Confidential • Airmail
+                From Plumber Daddy • Confidential
               </div>
             </div>
 
             <!-- Clean Elegant Typography -->
             <div class="my-4 max-w-lg">
               <span class="inline-block px-3 py-1 rounded-full bg-rose-950/80 border border-rose-700/40 text-amber-300 text-xs font-semibold mb-3 tracking-wide">
-                To The Girl Who Owns My Heart
+                To The Cutest Person • Sajal QT 🐑
               </span>
               <h3 class="font-serif text-2xl sm:text-4xl font-bold text-white mb-3">
-                A Handwritten Letter For You
+                A Handwritten Note From Plumber Daddy 🔧
               </h3>
               <p class="text-rose-200/85 text-sm sm:text-base leading-relaxed mb-6 font-light">
-                Words written late at night with all my love, capturing what you mean to me on your most special day.
+                Sweet memories from Graysheep, endless teasing, our arguments, and a rock-solid reminder that Plumber Daddy is always just a call away.
               </p>
               <div class="inline-flex items-center gap-2 text-xs text-rose-300/70 bg-rose-950/60 px-4 py-1.5 rounded-full border border-rose-800/30">
                 <span>✉️</span>
@@ -900,42 +925,48 @@
             <div class="text-center border-b border-rose-200/80 pb-4 mb-5">
               <div class="flex items-center justify-center gap-2 text-rose-500 text-sm mb-1">
                 <span>✦</span>
-                <span class="font-serif uppercase tracking-widest text-[11px] text-rose-800">Our First Birthday Together</span>
+                <span class="font-serif uppercase tracking-widest text-[11px] text-rose-800">Graysheep WhatsApp Community</span>
                 <span>✦</span>
               </div>
-              <h4 class="font-serif text-2xl sm:text-3xl font-bold text-rose-950">To My Dearest Vibha,</h4>
-              <p class="font-cursive text-xl sm:text-2xl text-rose-700 mt-1">Happy Birthday, My Love ❤️</p>
+              <h4 class="font-serif text-2xl sm:text-3xl font-bold text-rose-950">To Sajal QT,</h4>
+              <p class="font-cursive text-xl sm:text-2xl text-rose-700 mt-1">From Your One & Only — Plumber Daddy 🔧✨</p>
             </div>
 
             <!-- Scrollable Letter Body (Long, heartfelt note with custom scrollbar) -->
             <div id="letter-scroll-area" class="letter-scrollbar max-h-[380px] sm:max-h-[440px] overflow-y-auto pr-3 sm:pr-5 space-y-4 sm:space-y-5 text-sm sm:text-base font-serif text-neutral-800 leading-relaxed italic text-left">
-              <p>
-                Happy Birthday, Vibha! ❤️
+              <p class="text-rose-900 font-bold not-italic text-base sm:text-lg">
+                Dearest Sajal QT, Happy Birthday! 🎂✨
               </p>
               <p>
-                Today is so special to me because yeh hamara pehla birthday hai jo hum saath mein celebrate kar rahe hain hamare relationship mein. I can’t even begin to describe how happy it makes me to have you by my side.
+                Honestly, soch ke kitna crazy aur pyaara lagta hai ki hum bas abhi ek mahine pehle hi toh mile the ek WhatsApp community mein jiska naam tha Graysheep! Sirf ek mahine mein hi hamari itni deep aur mast dosti ban gayi ki lagta hi nahi ki hum bas ek mahine pehle mile the. It genuinely feels like we've shared months of laughs already.
               </p>
               <p>
-                Jab main piche mudke dekhta hoon, toh kitna amazing lagta hai sochke ki hum ek Instagram group chat se shuru hoke yahan tak aa gaye. Aur pehli baar jab hum mile the, toh main honestly kitna shy ho gaya tha hehe! But from that very day, you made everything feel so comfortable and special.
+                Sabse pehle toh, you are seriously SO damn cute! Aur jo tum hamesha mere saath flirt karte rehte ho na hehe... Plumber Daddy ko tumhara ye cute flirty andaaz bohot pasand hai! Tumhara charm, tumhari cute baatein aur wo innocent vibes poora din brighten kar deti hain.
               </p>
               <p>
-                Aur tumne mujhe Delhi mein itna sab ghumaya, itni pyaari yaadein banayi... har jagah explore karna tumhare saath feels so good. I am truly so glad to have you in my life.
+                Aur sach bataun toh, mujhe tumhe tease karna, roast karna aur tang karna kitna zyada pasand hai ye toh tumhe acchi tarah pata hai! Honestly, tumhe roast karna has literally become Plumber Daddy’s favorite pastime. Kyunki roast hone ke baad jo tumhare adorable innocent reactions aate hain na, they are totally priceless haha!
               </p>
               <p>
-                I know main kabhi kabhi tumhe pura time nahi de pata... main hamesha padhai, career aur savings ki baatein karta rehta hoon. But you always listen to me so patiently and support me in every single way. The only reason main ye sab karta hoon is because I only want ki hum dono hamesha acche se rahein, saath mein grow karein, aur apna career acche se banayein. Tumhara support mere liye sabse bada blessing hai.
+                Aur haan, dil se huge thank you for always taking my side in every single argument and debate in the group! Chahe koi bhi debate ho, tum bina soche hamesha Plumber Daddy ki side lete ho... jabki honestly main waise bhi hamesha right hi hota hoon hehe! Par fir bhi, knowing ki chahe kuch bhi ho jaye, you always have my back, gives such an awesome and comforting feeling.
               </p>
               <p>
-                Main thoda bimar chal raha hoon aur tabiyat thik nahi thi, isliye main tumhe physically koi gift nahi de paaya... toh main tumhare liye ye website bana raha hoon as my special birthday gift. I really hope isko dekh ke tumhare face pe ek pyaari si smile aaye.
+                On a genuine and serious note, maine iss ek mahine mein jitna tumhe closely jaana hai, I can truly say from the bottom of my heart that you are a very, very good person. You have an exceptionally pure, caring, and golden heart — something that is so rare and precious.
               </p>
               <p>
-                Thank you for being the sweetest, most understanding girlfriend in the whole world. I love you so much, Vibha! Happy Birthday once again!
+                Life mein aage chalke kabhi bhi koi bhi ups and downs aayein, chahe koi bhi tension ho, stress ho ya bura din chal raha ho, please always remember this promise: Plumber Daddy is always just a single call away for you, okie? You never have to hesitate or think twice. Main hamesha tumhare liye yahan hoon, no matter what.
               </p>
-              <div class="pt-4 border-t border-rose-200 text-right">
+              <p>
+                I hope tumhara ye birthday utna hi sparkling, joyful aur special ho jitne cute tum ho! Enjoy your day to the absolute fullest, dabakar cake khao, aur apni ye cute smile hamesha aise hi banaye rakhna!
+              </p>
+              <div class="pt-5 border-t border-rose-200 text-right">
                 <p class="font-cursive text-2xl sm:text-3xl text-rose-900 leading-tight">
-                  Yours always,
+                  With endless love, teasing & banter,
                 </p>
-                <p class="text-sm font-sans font-semibold text-rose-700 tracking-wide mt-1">
-                  Karan ❤️
+                <p class="text-sm font-sans font-bold text-rose-800 tracking-wide mt-1">
+                  Yours Forever In All Arguments,
+                </p>
+                <p class="font-cursive text-3xl sm:text-4xl text-rose-600 mt-1 font-bold">
+                  — Plumber Daddy 🔧❤️✨
                 </p>
               </div>
             </div>
@@ -949,14 +980,14 @@
 
         </div>
 
-        <!-- Open & Close Button Positioned Below The Note (As Requested) -->
+        <!-- Open & Close Button Positioned Below The Note -->
         <div class="flex flex-col items-center justify-center mt-6 gap-2">
           <button id="letter-toggle-btn" onclick="toggleEnvelope()" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-rose-600 via-rose-500 to-amber-500 hover:from-rose-500 hover:to-amber-400 text-white font-medium text-sm sm:text-base shadow-xl shadow-rose-950/50 hover:shadow-rose-500/40 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 cursor-pointer border border-amber-300/30">
             <span id="letter-toggle-icon">✉️</span>
             <span id="letter-toggle-text">Open Birthday Letter</span>
           </button>
           <span id="letter-toggle-hint" class="text-xs text-rose-300/70 font-light">
-            Click to unfold your handwritten letter
+            Click to unfold your handwritten letter from Plumber Daddy
           </span>
         </div>
 
@@ -979,14 +1010,14 @@
         Make A Birthday Wish
       </h2>
       <p class="text-rose-200/90 text-sm sm:text-base max-w-xl mx-auto mb-6 leading-relaxed">
-        Close your eyes, make a wish in your heart, and blow into your microphone (or tap the button below) to extinguish the candles!
+        Close your eyes, make a wish in your heart, and blow into your microphone (or tap the button below) to extinguish the candles, Sajal QT!
       </p>
 
       <!-- Interactive Microphone Blow Status Pill & Breath Meter -->
       <div id="mic-blow-status" class="inline-flex flex-col sm:flex-row items-center gap-3 px-5 py-2.5 rounded-full bg-rose-950/80 border border-rose-700/50 text-xs sm:text-sm text-rose-200 mb-8 backdrop-blur-md shadow-lg">
         <div class="flex items-center gap-2">
           <span id="mic-pulse-dot" class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
-          <span id="mic-status-text" class="font-medium">🎙️ Blow into your mic to blow out the candles!</span>
+          <span id="mic-status-text" class="font-medium">🎙️ Blow into your mic to blow out the candles, Sajal QT!</span>
         </div>
         <div class="flex items-center gap-2">
           <!-- Live sound level bar -->
@@ -1049,7 +1080,7 @@
 
         <!-- Cake Tier 3 (Base) -->
         <div class="relative z-10 w-60 h-20 bg-gradient-to-b from-rose-800 via-wine-900 to-rose-950 rounded-t-xl shadow-2xl flex items-center justify-center border-t border-rose-500/50">
-          <span class="font-cursive text-amber-200 text-xl tracking-wide">Happy Birthday ✨</span>
+          <span class="font-cursive text-amber-200 text-xl tracking-wide">Happy Birthday Sajal QT ✨</span>
         </div>
 
         <!-- Golden Serving Platter -->
@@ -1077,7 +1108,7 @@
       <div id="wish-revealed-card" class="max-w-xl mx-auto p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-rose-950/90 to-wine-950/95 border border-amber-400/60 shadow-2xl glow-rose hidden transform transition-all duration-500">
         <span class="text-4xl mb-3 block">💖 ✨ 🎂</span>
         <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">
-          Happy Birthday, Vibha!
+          Happy Birthday, Sajal QT!
         </h3>
 
         <!-- Birthday Song & 3 Wishes Celebration Banner -->
@@ -1085,12 +1116,12 @@
           <div class="flex items-center justify-between text-xs sm:text-sm font-semibold mb-2 text-amber-300">
             <span class="flex items-center gap-2">
               <span class="text-base animate-spin">🎵</span>
-              <span id="wish-round-badge">Playing Happy Birthday Song (Wish 1 of 3)</span>
+              <span id="wish-round-badge">Playing Birthday Wishes (Wish 1 of 3)</span>
             </span>
-            <span id="wish-round-tag" class="px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-200 border border-amber-400/30 text-[10px] uppercase tracking-wider font-bold">Round 1</span>
+            <span id="wish-round-tag" class="px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-200 border border-amber-400/30 text-[10px] uppercase tracking-wider font-bold">Wish 1</span>
           </div>
           <p id="wish-round-desc" class="text-rose-100 font-cursive text-xl sm:text-2xl text-center my-2 leading-relaxed">
-            "Happy Birthday to you, my dearest Vibha! 🎂"
+            "Happy Birthday to you, Sajal QT! 🎂"
           </p>
           <div class="w-full bg-rose-950/90 h-2 rounded-full overflow-hidden mt-3 border border-rose-800/40">
             <div id="wish-round-progress" class="bg-gradient-to-r from-amber-400 via-rose-400 to-amber-300 h-full w-1/3 transition-all duration-700"></div>
@@ -1098,10 +1129,10 @@
         </div>
 
         <p class="text-rose-200 text-sm sm:text-base leading-relaxed mb-6 font-light">
-          May all your dreams and wishes come true this year. I only want ki hum hamesha acche se rahein, saath mein grow karein, aur apna career acche se banayein.
+          May all your dreams and wishes come true this year! Thanks for always taking Plumber Daddy's side in every argument (even though I'm always right hehe). Remember that through every single up and down in life, Plumber Daddy is always just a call away for you, okie?
         </p>
-        <div class="inline-block px-5 py-2 rounded-full bg-rose-900/60 border border-rose-600/50 text-amber-200 font-cursive text-xl">
-          I love you so much, Vibha! — Karan ❤️
+        <div class="inline-block px-5 py-2.5 rounded-full bg-rose-900/60 border border-rose-600/50 text-amber-200 font-cursive text-xl">
+          Always here for you, Sajal QT! — Plumber Daddy 🔧❤️
         </div>
       </div>
 
@@ -1131,14 +1162,16 @@
         Forever & Always
       </div>
       <p class="text-xs sm:text-sm text-rose-400/80 mb-6 font-light">
-        Made with all my heart by Karan for Vibha’s first birthday in our relationship.
+        Made with love & endless teasing by Plumber Daddy for Sajal QT's special birthday.
       </p>
       <div class="flex items-center justify-center gap-4 text-xs text-rose-300/60">
-        <span>✨ Happy Birthday Vibha</span>
+        <span>✨ Happy Birthday Sajal QT</span>
         <span>•</span>
-        <span>🐱 From Insta GC to Us</span>
+        <span>🔧 Plumber Daddy</span>
         <span>•</span>
-        <span>❤️ Growing Together Always</span>
+        <span>🐑 Graysheep WA Community</span>
+        <span>•</span>
+        <span>📞 Always Just A Call Away</span>
       </div>
     </div>
   </footer>
@@ -1334,9 +1367,9 @@
 
         // Vocal birthday wish via SpeechSynthesis (if supported)
         const wishes = [
-          "Happy Birthday to you, Vibha!",
-          "Happy Birthday dear Vibha, Happy Birthday to you!",
-          "Happy Birthday Vibha, may all your dreams come true! Karan loves you!"
+          "Happy Birthday to you, Sajal QT!",
+          "Happy Birthday dear Sajal QT, Happy Birthday from Plumber Daddy!",
+          "Happy Birthday Sajal QT, remember Plumber Daddy is always just a call away! Have the best birthday!"
         ];
         speakWish(wishes[round - 1]);
 
@@ -1385,19 +1418,19 @@
         const prog = document.getElementById('wish-round-progress');
 
         if (round === 1) {
-          if (badge) badge.textContent = "Playing Birthday Song (Wish 1 of 3)";
+          if (badge) badge.textContent = "Playing Birthday Wishes (Wish 1 of 3)";
           if (tag) tag.textContent = "Wish 1 / 3";
-          if (desc) desc.textContent = '"Happy Birthday to you, my dearest Vibha! 🎂"';
+          if (desc) desc.textContent = '"Happy Birthday to you, Sajal QT! 🎂"';
           if (prog) prog.style.width = '33%';
         } else if (round === 2) {
-          if (badge) badge.textContent = "Playing Birthday Song (Wish 2 of 3)";
+          if (badge) badge.textContent = "Playing Birthday Wishes (Wish 2 of 3)";
           if (tag) tag.textContent = "Wish 2 / 3";
-          if (desc) desc.textContent = '"Happy Birthday dear Vibha, Happy Birthday to you! 🌸"';
+          if (desc) desc.textContent = '"Happy Birthday dear Sajal QT, from Plumber Daddy! 🌸"';
           if (prog) prog.style.width = '66%';
         } else if (round === 3) {
-          if (badge) badge.textContent = "Playing Birthday Song (Wish 3 of 3)";
+          if (badge) badge.textContent = "Playing Birthday Wishes (Wish 3 of 3)";
           if (tag) tag.textContent = "Wish 3 / 3";
-          if (desc) desc.textContent = '"May all your dreams come true! With all my love, Karan ❤️"';
+          if (desc) desc.textContent = '"Plumber Daddy is always just a call away through all ups and downs! ✨"';
           if (prog) prog.style.width = '100%';
         }
       }
@@ -1410,7 +1443,200 @@
     }
 
     const soundEngine = new RomanticAudioEngine();
+
+    // ----------------------------------------------------
+    // 2B. YOUTUBE BACKGROUND MUSIC ENGINE (Video: MdO4JrihZ2w)
+    // ----------------------------------------------------
+    class YouTubeBackgroundMusicManager {
+      constructor(videoId = 'MdO4JrihZ2w') {
+        this.videoId = videoId;
+        this.player = null;
+        this.isReady = false;
+        this.isPlaying = false;
+        this.isMuted = false;
+        this.hasUserInteracted = false;
+        this.synthActive = false;
+      }
+
+      init() {
+        if (window.YT && window.YT.Player) {
+          this.createPlayer();
+        } else {
+          const oldOnReady = window.onYouTubeIframeAPIReady;
+          window.onYouTubeIframeAPIReady = () => {
+            if (typeof oldOnReady === 'function') oldOnReady();
+            this.createPlayer();
+          };
+        }
+      }
+
+      createPlayer() {
+        if (this.player) return;
+        try {
+          this.player = new window.YT.Player('yt-player', {
+            height: '100',
+            width: '100',
+            videoId: this.videoId,
+            playerVars: {
+              autoplay: 0,
+              loop: 1,
+              playlist: this.videoId,
+              playsinline: 1,
+              controls: 0,
+              disablekb: 1,
+              rel: 0,
+              modestbranding: 1
+            },
+            events: {
+              onReady: (event) => {
+                this.isReady = true;
+                try {
+                  this.player.setVolume(85);
+                } catch(e) {}
+                if (this.hasUserInteracted && this.isPlaying) {
+                  this.play();
+                }
+              },
+              onStateChange: (event) => {
+                if (event.data === window.YT.PlayerState.PLAYING) {
+                  this.isPlaying = true;
+                  soundEngine.stop();
+                  this.synthActive = false;
+                  this.updateUI(true);
+                } else if (event.data === window.YT.PlayerState.ENDED) {
+                  if (this.isPlaying) {
+                    this.player.playVideo();
+                  }
+                }
+              },
+              onError: (err) => {
+                console.warn('YouTube player notice, falling back to ambient melody synthesizer:', err);
+                if (this.isPlaying && !this.synthActive) {
+                  soundEngine.start();
+                  this.synthActive = true;
+                  this.updateUI(true, 'Melody Synthesizer');
+                }
+              }
+            }
+          });
+        } catch (err) {
+          console.warn('YouTube setup notice:', err);
+        }
+      }
+
+      play() {
+        this.hasUserInteracted = true;
+        this.isPlaying = true;
+
+        if (this.isReady && this.player && typeof this.player.playVideo === 'function') {
+          try {
+            this.player.unMute();
+            this.player.setVolume(85);
+            this.player.playVideo();
+            soundEngine.stop();
+            this.synthActive = false;
+            this.updateUI(true);
+            return;
+          } catch(e) {}
+        }
+
+        // Start synthesized ambient audio immediately as smooth fallback
+        soundEngine.start();
+        this.synthActive = true;
+        this.updateUI(true, 'Melody Synthesizer');
+
+        // Poll for YouTube player readiness to seamlessly switch to requested YouTube song MdO4JrihZ2w
+        let attempts = 0;
+        const checker = setInterval(() => {
+          attempts++;
+          if (this.isReady && this.player && typeof this.player.playVideo === 'function') {
+            clearInterval(checker);
+            if (this.isPlaying) {
+              try {
+                this.player.unMute();
+                this.player.setVolume(85);
+                this.player.playVideo();
+                soundEngine.stop();
+                this.synthActive = false;
+                this.updateUI(true);
+              } catch(e) {}
+            }
+          } else if (attempts > 15) {
+            clearInterval(checker);
+          }
+        }, 400);
+      }
+
+      pause() {
+        this.isPlaying = false;
+        if (this.isReady && this.player && typeof this.player.pauseVideo === 'function') {
+          try {
+            this.player.pauseVideo();
+          } catch(e) {}
+        }
+        soundEngine.stop();
+        this.synthActive = false;
+        this.updateUI(false);
+      }
+
+      toggle() {
+        if (this.isPlaying) {
+          this.pause();
+          return false;
+        } else {
+          this.play();
+          return true;
+        }
+      }
+
+      toggleMute() {
+        this.isMuted = !this.isMuted;
+        if (this.isReady && this.player) {
+          try {
+            if (this.isMuted) {
+              this.player.mute();
+            } else {
+              this.player.unMute();
+            }
+          } catch(e) {}
+        }
+        const icon = document.getElementById('mute-icon');
+        if (icon) icon.textContent = this.isMuted ? '🔇' : '🔊';
+      }
+
+      updateUI(isPlaying, customSource) {
+        updateAudioToggleUI(isPlaying);
+        const floatIcon = document.getElementById('floating-music-icon');
+        const statusLabel = document.getElementById('music-status-label');
+        const sourceLabel = document.getElementById('music-source-label');
+        const pulse = document.getElementById('music-pulse-indicator');
+
+        if (isPlaying) {
+          if (floatIcon) floatIcon.textContent = '⏸️';
+          if (statusLabel) statusLabel.textContent = 'Birthday Song';
+          if (sourceLabel) sourceLabel.textContent = customSource || 'YouTube: MdO4JrihZ2w';
+          if (pulse) pulse.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse';
+        } else {
+          if (floatIcon) floatIcon.textContent = '▶️';
+          if (statusLabel) statusLabel.textContent = 'Paused Song';
+          if (pulse) pulse.className = 'w-2 h-2 rounded-full bg-rose-500';
+        }
+      }
+    }
+
+    const bgMusic = new YouTubeBackgroundMusicManager('MdO4JrihZ2w');
     const birthdaySong = new BirthdaySongEngine(soundEngine);
+
+    function toggleBackgroundMusic() {
+      if (birthdaySong && birthdaySong.isPlaying) {
+        birthdaySong.stop();
+      }
+      bgMusic.toggle();
+    }
+
+    function toggleMuteBackgroundMusic() {
+      bgMusic.toggleMute();
+    }
 
     // Speech Synthesis helper for voice birthday wish
     function speakWish(text) {
@@ -1487,7 +1713,7 @@
         // PIN Match!
         if (lockIcon) lockIcon.textContent = "🔓";
         if (status) {
-          status.innerHTML = '<span class="text-emerald-400 font-bold">✨ Passcode Correct! Opening Your Surprise...</span>';
+          status.innerHTML = '<span class="text-emerald-400 font-bold">✨ Passcode Correct! Opening Sajal\'s Surprise from Plumber Daddy...</span>';
         }
         for (let i = 0; i < 4; i++) {
           const dot = document.getElementById(`dot-${i}`);
@@ -1510,9 +1736,8 @@
           if (overlay) {
             overlay.classList.add('opacity-0', 'pointer-events-none');
           }
-          // Start ambient romantic melody automatically!
-          soundEngine.start();
-          updateAudioToggleUI(true);
+          // Start background music (YouTube song MdO4JrihZ2w with synth fallback)
+          bgMusic.play();
 
           // Initialize microphone permission for candle blowing
           requestMicPermission();
@@ -1651,7 +1876,10 @@
         this.particles = [];
         this.width = window.innerWidth;
         this.height = window.innerHeight;
-        this.mouse = { x: this.width / 2, y: this.height / 2 };
+        this.dpr = window.devicePixelRatio || 1;
+        this.mouse = { x: this.width / 2, y: this.height / 2, isHovered: false };
+        this.heartEmojis = ['💖', '💕', '💗', '💓', '🌸', '✨', '🤍', '🐑'];
+        this.time = 0;
 
         this.resize();
         this.initParticles();
@@ -1660,24 +1888,59 @@
       }
 
       resize() {
-        this.width = this.canvas.width = window.innerWidth;
-        this.height = this.canvas.height = window.innerHeight;
+        this.dpr = window.devicePixelRatio || 1;
+        this.width = window.innerWidth;
+        this.height = window.innerHeight;
+        this.canvas.width = this.width * this.dpr;
+        this.canvas.height = this.height * this.dpr;
+        this.ctx.scale(this.dpr, this.dpr);
       }
 
       initParticles() {
-        const count = Math.min(Math.floor(this.width / 25), 45);
+        // Optimized density for mobile & desktop
+        const baseCount = Math.min(Math.max(Math.floor(this.width / 24), 28), 55);
         this.particles = [];
-        for (let i = 0; i < count; i++) {
+
+        for (let i = 0; i < baseCount; i++) {
+          const randType = Math.random();
+          let type = 'sparkle';
+          let size = 6;
+          let speedY = -(Math.random() * 0.4 + 0.15);
+
+          if (randType < 0.45) {
+            // Large Floating Heart Emojis (Slow drifting & swaying)
+            type = 'emoji-heart';
+            size = Math.random() * 22 + 24; // 24px to 46px
+            speedY = -(Math.random() * 0.35 + 0.15); // Extra slow, dreamy drift
+          } else if (randType < 0.75) {
+            // Large SVG / Vector Bezier Path Hearts
+            type = 'svg-heart';
+            size = Math.random() * 20 + 22; // 22px to 42px
+            speedY = -(Math.random() * 0.4 + 0.18);
+          } else {
+            // Ambient Twinkling Sparkles
+            type = 'sparkle';
+            size = Math.random() * 6 + 3;
+            speedY = -(Math.random() * 0.5 + 0.2);
+          }
+
+          const baseX = Math.random() * this.width;
+
           this.particles.push({
-            x: Math.random() * this.width,
+            type,
+            baseX,
+            x: baseX,
             y: Math.random() * this.height,
-            size: Math.random() * 12 + 6,
-            speedY: -(Math.random() * 0.6 + 0.2),
-            speedX: (Math.random() - 0.5) * 0.4,
-            opacity: Math.random() * 0.4 + 0.15,
-            rotation: Math.random() * Math.PI * 2,
-            rotSpeed: (Math.random() - 0.5) * 0.02,
-            isHeart: Math.random() > 0.4
+            size,
+            speedY,
+            swayAmp: Math.random() * 28 + 15,
+            swaySpeed: Math.random() * 0.012 + 0.006,
+            swayPhase: Math.random() * Math.PI * 2,
+            opacity: type === 'emoji-heart' ? (Math.random() * 0.35 + 0.35) : (Math.random() * 0.4 + 0.2),
+            rotation: (Math.random() - 0.5) * 0.4,
+            rotSpeed: (Math.random() - 0.5) * 0.008,
+            emoji: this.heartEmojis[Math.floor(Math.random() * this.heartEmojis.length)],
+            hue: Math.random() > 0.3 ? '#f43f5e' : (Math.random() > 0.5 ? '#fda4af' : '#e3b879')
           });
         }
       }
@@ -1687,58 +1950,143 @@
           this.resize();
           this.initParticles();
         });
+
         window.addEventListener('mousemove', (e) => {
           this.mouse.x = e.clientX;
           this.mouse.y = e.clientY;
+          this.mouse.isHovered = true;
         });
+
+        window.addEventListener('touchmove', (e) => {
+          if (e.touches && e.touches[0]) {
+            this.mouse.x = e.touches[0].clientX;
+            this.mouse.y = e.touches[0].clientY;
+            this.mouse.isHovered = true;
+          }
+        }, { passive: true });
       }
 
-      drawHeart(x, y, size, opacity, rotation) {
+      // Draw vector heart path with rich gradient and glowing aura
+      drawSvgHeart(x, y, size, opacity, rotation, color) {
         this.ctx.save();
         this.ctx.translate(x, y);
         this.ctx.rotate(rotation);
-        this.ctx.beginPath();
         
-        const topCurveHeight = size * 0.3;
+        this.ctx.beginPath();
+        const topCurveHeight = size * 0.32;
         this.ctx.moveTo(0, topCurveHeight);
-        this.ctx.bezierCurveTo(-size / 2, -topCurveHeight, -size, topCurveHeight, 0, size);
-        this.ctx.bezierCurveTo(size, topCurveHeight, size / 2, -topCurveHeight, 0, topCurveHeight);
+        this.ctx.bezierCurveTo(-size * 0.5, -topCurveHeight * 1.1, -size * 1.05, topCurveHeight * 0.8, 0, size * 1.05);
+        this.ctx.bezierCurveTo(size * 1.05, topCurveHeight * 0.8, size * 0.5, -topCurveHeight * 1.1, 0, topCurveHeight);
+        this.ctx.closePath();
 
-        this.ctx.fillStyle = `rgba(244, 63, 94, ${opacity})`;
-        this.ctx.shadowBlur = 8;
-        this.ctx.shadowColor = 'rgba(251, 113, 133, 0.4)';
+        // Radial glowing gradient fill
+        const grad = this.ctx.createRadialGradient(0, size * 0.3, 2, 0, size * 0.4, size);
+        grad.addColorStop(0, `rgba(255, 228, 230, ${opacity * 1.1})`);
+        grad.addColorStop(0.5, color === '#e3b879' ? `rgba(227, 184, 121, ${opacity})` : `rgba(244, 63, 94, ${opacity})`);
+        grad.addColorStop(1, `rgba(136, 19, 55, ${opacity * 0.8})`);
+
+        this.ctx.fillStyle = grad;
+        this.ctx.shadowBlur = 18;
+        this.ctx.shadowColor = color === '#e3b879' ? 'rgba(227, 184, 121, 0.5)' : 'rgba(244, 63, 94, 0.45)';
         this.ctx.fill();
+
+        // Subtle highlight outline
+        this.ctx.lineWidth = 1;
+        this.ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.4})`;
+        this.ctx.stroke();
+
         this.ctx.restore();
       }
 
+      // Draw large slow-moving floating heart emoji with glowing backdrop
+      drawEmojiHeart(x, y, size, opacity, rotation, emoji) {
+        this.ctx.save();
+        this.ctx.translate(x, y);
+        this.ctx.rotate(rotation);
+        this.ctx.font = `${Math.round(size)}px "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif`;
+        this.ctx.textAlign = 'center';
+        this.ctx.textBaseline = 'middle';
+        this.ctx.globalAlpha = Math.min(Math.max(opacity, 0.1), 0.85);
+
+        // Soft romantic glow aura
+        this.ctx.shadowBlur = 16;
+        this.ctx.shadowColor = 'rgba(251, 113, 133, 0.5)';
+        this.ctx.fillText(emoji, 0, 0);
+
+        this.ctx.restore();
+      }
+
+      // Draw twinkling golden stardust sparkle
       drawSparkle(x, y, size, opacity) {
         this.ctx.save();
+        this.ctx.translate(x, y);
+
+        // 4-point sparkle cross
+        const s = size * (0.8 + 0.3 * Math.sin(this.time * 2 + x));
         this.ctx.beginPath();
-        this.ctx.arc(x, y, size * 0.3, 0, Math.PI * 2);
+        this.ctx.moveTo(0, -s);
+        this.ctx.quadraticCurveTo(0, 0, s, 0);
+        this.ctx.quadraticCurveTo(0, 0, 0, s);
+        this.ctx.quadraticCurveTo(0, 0, -s, 0);
+        this.ctx.quadraticCurveTo(0, 0, 0, -s);
+
         this.ctx.fillStyle = `rgba(251, 191, 36, ${opacity})`;
-        this.ctx.shadowBlur = 10;
-        this.ctx.shadowColor = 'rgba(245, 158, 11, 0.6)';
+        this.ctx.shadowBlur = 12;
+        this.ctx.shadowColor = 'rgba(245, 158, 11, 0.7)';
         this.ctx.fill();
+
+        // Center bright dot
+        this.ctx.beginPath();
+        this.ctx.arc(0, 0, s * 0.3, 0, Math.PI * 2);
+        this.ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+        this.ctx.fill();
+
         this.ctx.restore();
       }
 
       animate() {
+        this.time += 0.015;
         this.ctx.clearRect(0, 0, this.width, this.height);
 
         for (let p of this.particles) {
+          // Slow vertical drift
           p.y += p.speedY;
-          p.x += p.speedX;
-          p.rotation += p.rotSpeed;
 
-          if (p.y < -30) {
-            p.y = this.height + 20;
-            p.x = Math.random() * this.width;
+          // Sinusoidal horizontal sway across the screen
+          p.swayPhase += p.swaySpeed;
+          const swayOffset = Math.sin(p.swayPhase) * p.swayAmp;
+          p.x = p.baseX + swayOffset;
+
+          // Gentle rocking rotation
+          p.rotation += p.rotSpeed + Math.sin(p.swayPhase * 0.7) * 0.002;
+
+          // Subtle interactive proximity nudge away from mouse
+          if (this.mouse.isHovered) {
+            const dx = p.x - this.mouse.x;
+            const dy = p.y - this.mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 110 && dist > 1) {
+              const force = (110 - dist) / 110;
+              p.baseX += (dx / dist) * force * 1.8;
+            }
           }
-          if (p.x < -20) p.x = this.width + 20;
-          if (p.x > this.width + 20) p.x = -20;
 
-          if (p.isHeart) {
-            this.drawHeart(p.x, p.y, p.size, p.opacity, p.rotation);
+          // Smooth wrap-around when heart floats off top
+          if (p.y < -60) {
+            p.y = this.height + 40 + Math.random() * 30;
+            p.baseX = Math.random() * this.width;
+            p.swayPhase = Math.random() * Math.PI * 2;
+          }
+
+          // Wrap horizontally if swayed past screen edges
+          if (p.baseX < -40) p.baseX = this.width + 30;
+          if (p.baseX > this.width + 40) p.baseX = -30;
+
+          // Render particle based on type
+          if (p.type === 'emoji-heart') {
+            this.drawEmojiHeart(p.x, p.y, p.size, p.opacity, p.rotation, p.emoji);
+          } else if (p.type === 'svg-heart') {
+            this.drawSvgHeart(p.x, p.y, p.size, p.opacity, p.rotation, p.hue);
           } else {
             this.drawSparkle(p.x, p.y, p.size, p.opacity);
           }
@@ -1826,7 +2174,7 @@
       if (f3) f3.style.opacity = '0';
 
       if (micStatus) {
-        micStatus.textContent = "✨ Candles Blown with Love! Happy Birthday Vibha!";
+        micStatus.textContent = "✨ Candles Blown with Love! Happy Birthday Sajal QT!";
       }
 
       // Reveal Celebration Wish Card
@@ -1839,14 +2187,14 @@
         btn.classList.add('from-emerald-600', 'to-rose-600');
       }
 
-      // Stop romantic background melody while Birthday Song plays
-      soundEngine.stop();
-      updateAudioToggleUI(false, "🎂 Playing Birthday Song...");
+      // Stop/pause background music while Birthday Wishes play
+      bgMusic.pause();
+      updateAudioToggleUI(false, "🎂 Playing Birthday Wishes...");
 
       // Grand celebration confetti extravaganza
       fireCelebrationConfetti();
 
-      // Play Happy Birthday Song (3 wishes) then smoothly resume romantic melody!
+      // Play Happy Birthday Song (3 wishes) then smoothly resume background song!
       birthdaySong.play(() => {
         finishBirthdayWishes();
       });
@@ -1859,16 +2207,15 @@
       
       if (badge) badge.textContent = "3 Birthday Wishes Sent To The Stars! ✨";
       if (tag) tag.textContent = "Completed 💖";
-      if (desc) desc.textContent = '"Resuming romantic melody... Forever with you, Vibha ❤️"';
+      if (desc) desc.textContent = '"Resuming song... Plumber Daddy is always just a call away for you, Sajal QT ❤️"';
 
       if (window.confetti) {
         confetti({ particleCount: 80, spread: 100, origin: { y: 0.6 } });
       }
 
-      // Seamlessly restart romantic background melody as requested!
+      // Seamlessly restart background song as requested!
       setTimeout(() => {
-        soundEngine.start();
-        updateAudioToggleUI(true);
+        bgMusic.play();
       }, 1200);
     }
 
@@ -1998,11 +2345,11 @@
       }
 
       if (isPlaying) {
-        if (text) text.textContent = 'Pause Music';
+        if (text) text.textContent = 'Pause Song';
         if (bars) bars.classList.remove('hidden');
         if (btn) btn.classList.add('border-rose-500', 'bg-rose-900/60');
       } else {
-        if (text) text.textContent = 'Play Melody';
+        if (text) text.textContent = 'Play Song';
         if (bars) bars.classList.add('hidden');
         if (btn) btn.classList.remove('border-rose-500', 'bg-rose-900/60');
       }
@@ -2016,8 +2363,7 @@
         if (birthdaySong && birthdaySong.isPlaying) {
           birthdaySong.stop();
         }
-        const playing = soundEngine.toggle();
-        updateAudioToggleUI(playing);
+        bgMusic.toggle();
       });
     }
 
@@ -2090,6 +2436,7 @@
     window.addEventListener('DOMContentLoaded', () => {
       initTheme();
       initAudioToggle();
+      bgMusic.init();
       initAnimations();
     });
   </script>
